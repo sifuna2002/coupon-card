@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coupon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="coupon">
+            <h3>This is a coupon with <br> copy functionality</h3>
+            <div class="coupon-row">
+                <span id="code">CFGSDKBS</span>
+                <span id="btn">COPY CODE</span>
+            </div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <p>valid till 31 Dec 2021</p>
+        </div>
+    </div>
+    <script>
+        const Btn = document.getElementById('btn');
+        const Code = document.getElementById('code');
+        Btn.onclick = () => {
+            navigator.clipboard.writeText(Code.innerHTML)
+            Btn.innerHTML = "COPIED"
+            setTimeout(() => {
+                Btn.innerHTML = "COPY CODE"
+            }, 3000)
+        }
+    </script>
+</body>
+
+</html>
